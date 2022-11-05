@@ -1,0 +1,12 @@
+<div class="main">
+    <!-- Display attributes of instance -->
+    {% csrf_token %}
+    Title: {{ data.title }} <br /> <br />
+    Description:  {{ data.description }} <br /> <br />
+    Content: {{ data.content }} <br /> <br />
+    Author: {{ data.author }}<br /> <br />
+    <form method="POST">
+        {% csrf_token %}
+        <a href="blogs/"><input type="submit" value="DELETE"/></a> 
+    </form>
+</div>

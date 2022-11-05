@@ -1,0 +1,25 @@
+<div>
+<h1>All Blogs</h1>
+{% for blog in blogs %} <ul>
+    <li><strong>Title</strong> {{blog.title}}</li> 
+    <li><strong>Description</strong> {{blog.description}}</li>
+    <li><strong>Content</strong> {{blog.content}}</li>
+    <li><strong>Author</strong> {{blog.author}}</li>
+    {% for comment in blog.comments}
+    <ul>
+        <li>{{comment.author}}</li>
+        <li>{{comment.comment}}</li>
+    </ul>
+</ul>
+{% endfor %}
+<h3>Post a New Blog</h3>
+    <form method="POST">
+        <!-- Security token by Django -->
+        {% csrf_token %}
+    
+        <!-- form as paragraph -->
+        {{ form.as_p }}
+    
+        <input type="submit" value="SUBMIT">
+    </form>
+</div>
